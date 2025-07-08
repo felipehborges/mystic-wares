@@ -1,34 +1,46 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
+import {
+  Crown,
+  Menu,
+  Moon,
+  Scroll,
+  Search,
+  Shield,
+  ShoppingCart,
+  Sun,
+  Sword,
+  User
+} from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useTheme } from 'next-themes'
+import { useState } from 'react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Search, ShoppingCart, User, Menu, Sun, Moon, Crown, Sword, Shield, Scroll } from "lucide-react"
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import { Input } from '@/components/ui/input'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Categories", href: "/categories" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
+  { name: 'Categories', href: '/categories' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' }
 ]
 
 const categories = [
-  { name: "Weapons", href: "/products?category=weapons", icon: Sword },
-  { name: "Armor", href: "/products?category=armor", icon: Shield },
-  { name: "Accessories", href: "/products?category=accessories", icon: Crown },
-  { name: "Magic Items", href: "/products?category=magic", icon: Scroll },
+  { name: 'Weapons', href: '/products?category=weapons', icon: Sword },
+  { name: 'Armor', href: '/products?category=armor', icon: Shield },
+  { name: 'Accessories', href: '/products?category=accessories', icon: Crown },
+  { name: 'Magic Items', href: '/products?category=magic', icon: Scroll }
 ]
 
 export default function Header() {
@@ -42,8 +54,16 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Crown className="h-8 w-8 text-amber-600" />
-            <span className="text-xl font-bold text-amber-900 dark:text-amber-100">Medieval Merchant</span>
+            <Image
+              alt="Mystic Wares Logo"
+              src={
+                theme === 'dark'
+                  ? '/logo/logo_hor_white.png'
+                  : '/logo/logo_hor_black.png'
+              }
+              width={150}
+              height={150}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -98,7 +118,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="text-amber-600 hover:text-amber-700"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -106,7 +126,12 @@ export default function Header() {
             </Button>
 
             {/* Cart */}
-            <Button asChild variant="ghost" size="icon" className="relative text-amber-600 hover:text-amber-700">
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="relative text-amber-600 hover:text-amber-700"
+            >
               <Link href="/cart">
                 <ShoppingCart className="h-5 w-5" />
                 {cartItemCount > 0 && (
@@ -120,7 +145,11 @@ export default function Header() {
             {/* User Menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-amber-600 hover:text-amber-700">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-amber-600 hover:text-amber-700"
+                >
                   <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -142,7 +171,11 @@ export default function Header() {
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden text-amber-600">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden text-amber-600"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -158,7 +191,9 @@ export default function Header() {
                     </Link>
                   ))}
                   <div className="pt-4 border-t border-amber-200 dark:border-amber-800">
-                    <h3 className="font-semibold text-amber-900 dark:text-amber-100 mb-2">Categories</h3>
+                    <h3 className="font-semibold text-amber-900 dark:text-amber-100 mb-2">
+                      Categories
+                    </h3>
                     {categories.map((category) => (
                       <Link
                         key={category.name}

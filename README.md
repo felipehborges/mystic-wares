@@ -1,10 +1,10 @@
-# Medieval Merchant - Monorepo Ecommerce
+# Mystic Wares - Monorepo Ecommerce
 
 A fictional medieval-themed ecommerce website built with modern web technologies in a monorepo structure.
 
 ## 🏰 About
 
-Medieval Merchant is a fantasy ecommerce platform specializing in legendary weapons, mystical artifacts, royal accessories, and magical items. Built with a medieval aesthetic using yellow and brown color schemes.
+Mystic Wares is a fantasy ecommerce platform specializing in legendary weapons, mystical artifacts, royal accessories, and magical items. Built with a medieval aesthetic using yellow and brown color schemes.
 
 ## 🛠️ Tech Stack
 
@@ -156,4 +156,4 @@ This project is for educational and demonstration purposes.
 
 ---
 
-*Built with ⚔️ by the Medieval Merchant Guild*
+*Built with ⚔️ by the Mystic Wares Guild*

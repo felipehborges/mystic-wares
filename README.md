@@ -18,7 +18,7 @@ Mystic Wares is a fantasy ecommerce platform specializing in legendary weapons, 
 - **next-themes** - Dark/light mode support
 - **Lucide React** - Beautiful icons
 
-### Backend (Planned)
+### Backend
 - **NestJS** - Node.js framework
 - **Fastify** - Fast web framework
 - **Prisma** - Database ORM
@@ -46,6 +46,7 @@ medieval-ecommerce-monorepo/
 │   ├── ui/               # shadcn/ui components
 │   └── layout/           # Layout components
 ├── lib/                  # Utility functions
+├── server/               # NestJS backend
 └── styles/              # Global styles
 \`\`\`
 
@@ -77,6 +78,13 @@ medieval-ecommerce-monorepo/
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+5. **Run the backend**
+   ```bash
+   cd server
+   npm install # or pnpm install
+   npm run start:dev
+   ```
 
 ## 🛍️ Features
 
@@ -120,6 +128,17 @@ All forms use React Hook Form with Zod validation schemas for type-safe form han
 - Follow the medieval color palette (amber/yellow and brown)
 - Maintain consistent spacing and typography
 - Ensure dark mode compatibility
+
+### Backend Setup
+The `server` directory contains a basic NestJS application configured with Prisma.
+Create a `.env` file based on `.env.example` and run migrations to set up the
+database:
+
+```bash
+cd server
+pnpm install
+pnpm prisma:migrate
+```
 
 ## 📱 Responsive Breakpoints
 

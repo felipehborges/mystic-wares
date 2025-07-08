@@ -1,0 +1,23 @@
+{
+  "name": "mystic-wares-backend",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@nestjs/common": "latest",
+    "@nestjs/core": "latest",
+    "@nestjs/platform-fastify": "latest",
+    "@prisma/client": "latest",
+    "reflect-metadata": "latest"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "latest",
+    "prisma": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  }
+}
